@@ -21,6 +21,26 @@ Python 3 and the Black Duck https://github.com/blackducksoftware/hub-rest-api-py
 
 An API key for the Black Duck server must also be configured in the `.restconfig.json` file in the package folder.
 
+# INSTALLATION
+
+Install the hub-rest-api-python package:
+
+    git clone https://github.com/blackducksoftware/hub-rest-api-python.git
+    cd hub-rest-api-python
+    pip3 install -r requirements.txt
+    pip3 install .
+    
+Copy the `ignore_snippets.py` script into the `examples` sub-folder within `hub-rest-api-python`.
+
+Configure the hub connection in the `.restconfig.json` file within `hub-rest-api-python` - example contents:
+
+    {
+      "baseurl": "https://myhub.blackducksoftware.com",
+      "api_token": "YWZkOTE5NGYtNzUxYS00NDFmLWJjNzItYmYwY2VlNDIxYzUwOmE4NjNlNmEzLWRlNTItNGFiMC04YTYwLWRBBWQ2MDFlMjA0Mg==",
+      "insecure": true,
+      "debug": false
+    }
+
 # USAGE
 
 The `ignore_snippets.py` script can be invoked as follows:
@@ -57,7 +77,7 @@ The `ignore_snippets.py` script can be invoked as follows:
 
 The example project/version (partisan-snippets/1.0) contains 4 unignored/unconfirmed snippets.
 
-The --report option will list the snippet matach values (but will not ignore/unignore snippets):
+The --report option will list the snippet match values for all snippets (but will not ignore/unignore):
 
     python3 examples/MRB_ignore_snippets2.py partisan-snippets 1.0 --report
     
