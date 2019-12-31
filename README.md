@@ -9,7 +9,7 @@ It does not represent any extension of licensed functionality of Synopsys softwa
 
 The `ignore_snippets.py` script ignores (or unignores) unconfirmed snippet matches selected by specified options.
 
-Snippets can be selected by one or more of the minimum match score (which is a hybrid score combining the match level with the likelihood that the component can be copied), the minimum coverage score (the percentage of matching lines), the minimum file size (in bytes), or the minimum count of matched lines. Multiple options are 
+Snippets can be selected by one or more of the minimum match score (which is a hybrid score combining the match level with the likelihood that the component can be copied), the minimum coverage score (the percentage of matching lines), the minimum file size (in bytes), or the minimum count of matched lines. Multiple options are combined (AND).
 
 A report option allows listing all of the match values without ignoring/unignoring.
 
