@@ -23,9 +23,9 @@ An API key for the Black Duck server must also be configured in the `.restconfig
 
 # USAGE
 
-The `import_manifest.py` script must be invoked with one of the 2 modes kblookup or import as shown in the usage text below:
+The `ignore_snippets.py` script can be invoked as follows:
 
-    usage: MRB_ignore_snippets2.py [-h] [-s SCOREMIN] [-c COVERAGEMIN]
+    usage: ignore_snippets.py [-h] [-s SCOREMIN] [-c COVERAGEMIN]
                                [-z SIZEMIN] [-l MATCHEDLINESMIN] [-r] [-u]
                                project_name version
                                
