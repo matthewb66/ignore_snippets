@@ -27,7 +27,7 @@ Install the hub-rest-api-python package from [PyPi](https://pypi.org/project/bla
 
     pip3 install blackduck
 
-Creat a token file containing a Black Duck API token.
+Create a token file containing a Black Duck API token.
 
 # USAGE
 
