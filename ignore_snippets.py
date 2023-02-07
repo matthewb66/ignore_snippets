@@ -16,8 +16,6 @@ def get_snippet_entries(project_id, version_id):
 
 
 def send_bulk_update_request(project_id, version_id, snippet_updates):
-    # Using internal API - see https://jira.dc1.lan/browse/HUB-18270: Make snippet API calls for ignoring,
-    # confirming snippet matches public
     url = f"/api/projects/{project_id}/versions/{version_id}/bulk-snippet-bom-entries"
     headers = {'Content-type': 'application/vnd.blackducksoftware.bill-of-materials-6+json'}
     response = bd.session.put(url, json=snippet_updates, headers=headers)
@@ -113,7 +111,7 @@ snippet_bom_entries = get_snippet_entries(project_id, version_id)
 for snippet_item in snippet_bom_entries:
     block_num = 1
     for match in snippet_item['fileSnippetBomComponents']:
-        matched_lines = match['sourceEndLines'][0] - match['sourceStartLines'][0]
+        matched_lines = match['sourceEndLines'][0] - match['sourceStartLines'][0] + 1
         if (int(match['matchScore'] * 100) < int(args.scoremin)) and (
                 int(match['matchCoverage']) < int(args.coveragemin)) and (
                 int(snippet_item['size']) < int(args.sizemin)) and (matched_lines < int(args.matchedlinesmin)):
